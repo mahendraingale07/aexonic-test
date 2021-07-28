@@ -42,6 +42,7 @@ export class ProductsComponent implements OnInit {
               }
             });
           });
+          this.count = cartItem.length
         }
       });
   }
