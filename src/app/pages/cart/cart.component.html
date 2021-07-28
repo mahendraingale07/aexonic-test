@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-8">
+        <mat-card class="card" *ngFor="let item of cartItems; let i = index">
+            <mat-card-content>
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="row m-l-10"><strong>{{item.item_name}} (₹{{item.price}})</strong></div>
+                  <div class="row m-l-10"><label>Total ₹{{item.total}}</label></div>
+                </div>
+                <div class="col-md-5">
+                  <button nbButton (click)="minusOne(i)">
+                    <nb-icon icon="minus-circle-outline" style="font-size: 30px;"></nb-icon>
+                  </button>
+                  <button nbButton status="success" style="margin-left: 5px;">
+                    {{item.count}}
+                  </button>
+                  <button nbButton (click)="addOne(i)" style="margin-left: 5px;">
+                    <nb-icon icon="plus-square-outline" style="font-size: 30px;"></nb-icon>
+                  </button>
+                  <button nbButton status="danger" (click)="remove(i)" style="margin-left: 5px;">
+                    <nb-icon icon="trash-2-outline" style="font-size: 30px;"></nb-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+    </div>
+    <div class="col-md-4">
+        <mat-card>
+            <mat-card-content style="font-size: 18px; font-weight: 500;">
+                <div class="row" >
+                    <div class="col-md-6"><label> Amount : </label></div>
+                    <div class="col-md-6"><label> ₹{{amount.total | number : '1.2-2'}} </label></div>
+                </div>
+                <div class="row" >
+                    <div class="col-md-6"><label> Discount : </label></div>
+                    <div class="col-md-6"><label> ₹{{amount.discount | number : '1.2-2'}} </label></div>
+                </div>
+                <div class="row" >
+                    <div class="col-md-6"><label> Total : </label></div>
+                    <div class="col-md-6"><label> ₹{{amount.amountToPay | number : '1.2-2'}} </label></div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

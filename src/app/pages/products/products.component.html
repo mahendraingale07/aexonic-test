@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="row fl-right">
+      <button nbButton status="danger" (click)="openCart()">
+        <nb-icon icon="shopping-cart-outline" style="font-size: 30px;"></nb-icon>
+        <nb-badge *ngIf="count > 0" [text]="count" status="success" position="top right"></nb-badge>
+      </button>
+    </div>
+  </div>
+  <div class="col-md-4" *ngFor="let item of products; let i = index">
+    <mat-card class="card">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row m-l-10"><strong>{{item.item_name}}</strong></div>
+            <div class="row m-l-10"><label>₹{{item.price}}</label></div>
+          </div>
+          <div class="col-md-3">
+            <button nbButton *ngIf="!item.isCart" (click)="addToCart(i)">
+              <nb-icon icon="plus-square-outline" style="font-size: 30px;"></nb-icon>
+            </button>
+            <button nbButton status="warning" *ngIf="item.isCart" (click)="removeFromCart(i)">
+              <nb-icon icon="minus-circle-outline" style="font-size: 30px;"></nb-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

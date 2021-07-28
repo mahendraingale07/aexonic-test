@@ -14,8 +14,8 @@ export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
 
-  //Get Country
-  getCountry() {
+  //Get Products
+  getProducts() {
     return this.http
       .get(this.url)
       .pipe(map((results) => results));
