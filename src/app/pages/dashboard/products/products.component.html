@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-4" *ngFor="let c of contacts">
+    <mat-card class="card">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">{{c.user.name}}</div>
+            <div class="row"><label>798</label></div>
+          </div>
+          <div class="col-md-3">
+            <button nbButton>
+              <nb-icon icon="plus-square-outline" style="font-size: 30px;"></nb-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<!-- <nb-card size="giant">
+  <nb-list>
+    <nb-list-item class="product" *ngFor="let c of contacts">
+      {{c.user.name}}
+    </nb-list-item>
+  </nb-list>
+</nb-card> -->

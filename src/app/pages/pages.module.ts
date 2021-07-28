@@ -1,3 +1,4 @@
+import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
 import { NbMenuModule } from '@nebular/theme';
 
@@ -12,6 +13,7 @@ import { PagesRoutingModule } from './pages-routing.module';
     ThemeModule,
     NbMenuModule,
     DashboardModule,
+    MaterialModule
   ],
   declarations: [
     PagesComponent,
