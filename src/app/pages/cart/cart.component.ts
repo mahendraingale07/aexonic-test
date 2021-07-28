@@ -42,7 +42,6 @@ export class CartComponent implements OnInit {
   calculate(){
     let total:number=0;
     this.amount.discount = 0
-    this.amount = {}
     this.cartItems.forEach((element, i) => {
       total = total + this.cartItems[i].total
     });
@@ -55,6 +54,12 @@ export class CartComponent implements OnInit {
       this.amount.discount = (total/100)*20;
     }
     this.amount.amountToPay = this.amount.total - this.amount.discount
+  }
+
+  deleteCart(){
+    this.cartItems = []
+    this.amount = []
+    this.commonService.setCartProducts(this.cartItems)
   }
 
 }

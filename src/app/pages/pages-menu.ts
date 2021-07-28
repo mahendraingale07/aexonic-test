@@ -7,9 +7,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/dashboard',
     home: true,
   },
-  {
-    title: 'Cart',
-    icon: 'shopping-cart-outline',
-    link: '/pages/cart',
-  }
+  // {
+  //   title: 'Cart',
+  //   icon: 'shopping-cart-outline',
+  //   link: '/pages/cart',
+  // }
 ];

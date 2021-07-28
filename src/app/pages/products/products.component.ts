@@ -30,6 +30,19 @@ export class ProductsComponent implements OnInit {
     this.apiService.getProducts().subscribe(
       (response: any) => {
         this.products = response;
+
+        //If already cart has some items then,
+        let cartItem : any = []
+        cartItem = this.commonService.getCartProducts()
+        if(cartItem.length > 0){
+          this.products.forEach((element1, i1) => {
+            cartItem.forEach((element2, i2) => {
+              if(element1.id == element2.id){
+                this.products[i1].isCart = true;
+              }
+            });
+          });
+        }
       });
   }
 
